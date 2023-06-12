@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+
+  position: relative;
+}
+.mode {
+  margin: 10px 0px;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border: 0;
+}
+.mode:focus {
+  outline: none;
+  border: 0;
+}
+.mode:hover {
+  transform: scale(0.95);
+}
+.needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  
+  .needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+  }
+  
+  .needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: #e74c3c;
+  }
+
+.time {
+  position: absolute;
+  font-size: 50px;
+  bottom: 20vh;
+}
+.today {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: rgb(81, 81, 81);
+  bottom: 12vh;
+}
+
+#date {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+}
+body.dark {
+  background-color: black;
+}
+body.dark .time {
+  color: white;
+}
+body.dark .today {
+  color: white;
+}
+body.dark #date {
+  color: black;
+  background-color: white;
+}
+body.dark .mode {
+  color: black;
+  background-color: white;
+}
+body.dark .needle{
+    background-color: white;
+} 
+body.dark .needle.needle.second{
+    background-color: #e74c3c;
+} 
+.center-point {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .center-point::after {
+    content: '';
+    background-color:black;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
